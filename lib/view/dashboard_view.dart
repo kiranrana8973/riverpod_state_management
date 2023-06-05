@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class DashboardView extends StatefulWidget {
-  const DashboardView({super.key});
+  final Color color;
+  const DashboardView({required this.color, super.key});
 
   @override
   State<DashboardView> createState() => _DashboardViewState();
@@ -13,6 +14,7 @@ class _DashboardViewState extends State<DashboardView> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Dashboard'),
+        backgroundColor: widget.color,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -27,6 +29,8 @@ class _DashboardViewState extends State<DashboardView> {
               onPressed: () => Navigator.pushNamed(context, '/add'),
               child: const Text('Add'),
             ),
+            const SizedBox(height: 8),
+            const Text('asd')
           ],
         ),
       ),
